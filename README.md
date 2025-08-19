@@ -1,2 +1,2 @@
-# socialMediaApplication
+# social media application
 Assignment: building the front-end client for a social media application.
