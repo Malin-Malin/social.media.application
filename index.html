@@ -15,164 +15,197 @@
 </head>
 
 <body>
+	<!-- Header -->
+	<section style="background:url(https://images.unsplash.com/photo-1657974361095-4d5f3fb381fb?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D) center / cover no-repeat; height: 400px;" class="bg-dark">
+	</section>
 
-<section style="background:url(https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?crop=entropy&amp;cs=tinysrgb&amp;fit=crop&amp;fm=jpg&amp;ixid=MnwzNzg0fDB8MXxzZWFyY2h8MTB8fGNhcnxlbnwwfDB8fHwxNjU0NjgxMDMx&amp;ixlib=rb-1.2.1&amp;q=80&amp;w=1080&amp;h=768)  center / cover no-repeat;" class="text-light bg-dark py-6">
-	<div class="container py-5 text-center">
-		<div class="row">
-			<div class="col-md-8 offset-md-2 px-4">
-				<div class="lc-block mb-4">
+	<!-- Navbar -->
+	<nav class="navbar navbar-expand-lg bg-body-tertiary">
+	<div class="container-fluid">
+		<a class="navbar-brand" href="#">Navbar</a>
+		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+		<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+			<li class="nav-item">
+			<a class="nav-link active" aria-current="page" href="#">Home</a>
+			</li>
+			<li class="nav-item">
+			<a class="nav-link" href="#">Link</a>
+			</li>
+			<li class="nav-item dropdown">
+			<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+				Dropdown
+			</a>
+			<ul class="dropdown-menu">
+				<li><a class="dropdown-item" href="#">Action</a></li>
+				<li><a class="dropdown-item" href="#">Another action</a></li>
+				<li><hr class="dropdown-divider"></li>
+				<li><a class="dropdown-item" href="#">Something else here</a></li>
+			</ul>
+			</li>
+			<li class="nav-item">
+			<a class="nav-link disabled" aria-disabled="true">Disabled</a>
+			</li>
+		</ul>
+		
+		<form class="d-flex" role="search">
+			<input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
+			<button class="btn btn-outline-success" type="submit">Search</button>
+		</form>
+		</div>
+	</div>
+	</nav>
+
+	<!-- Breadcrumb -->
+	<div class="container my-5">
+		<nav aria-label="breadcrumb">
+			<ol class="breadcrumb breadcrumb-chevron p-3 bg-body-tertiary rounded-3">
+				<li class="breadcrumb-item"> <a class="link-body-emphasis" href="#">
+					<svg class="bi" width="16" height="16" aria-hidden="true">
+							<use xlink:href="#house-door-fill"></use>
+						</svg> <span class="visually-hidden">Home</span> </a> </li>
+				<li class="breadcrumb-item"> <a class="link-body-emphasis fw-semibold text-decoration-none"
+						href="#">Library</a> </li>
+				<li class="breadcrumb-item active" aria-current="page">
+					Data
+				</li>
+			</ol>
+		</nav>
+	</div>
+	
+	<main>
+		<!-- Thumbnail for posts -->
+		<section id="discover">
+			<div class="container">
+				<div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
+					<div class="col">
+						<div class="lc-block card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg" lc-helper="background" style="background-image: url('https://images.unsplash.com/photo-1560472354-0088b5dc9d8d?crop=entropy&amp;cs=tinysrgb&amp;fit=crop&amp;fm=jpg&amp;ixid=MnwzNzg0fDB8MXxzZWFyY2h8Mnx8d29yZHByZXNzfGVufDB8MHx8fDE2NDYzMjk2OTA&amp;ixlib=rb-1.2.1&amp;q=80&amp;w=1080&amp;h=768&amp;faceindex=1&amp;duotone=172E72,28E398'); background-size:cover">
+							<div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+								<div class="lc-block pt-5 mt-5 mb-4">
+									<div editable="rich">
+										<h2 class="display-6 lh-1 fw-bold">Short title, long jacket</h2>
+										<p>Quickly design and customize responsive mobile-first sites with Bootstrap.</p>
+									</div>
+								</div>
+								<ul class="lc-block d-flex list-unstyled mt-auto ms-auto"><a class="btn btn-link btn-sm text-white " href="#" role="button">Read more</a></ul>
+							</div>
+						</div>
+					</div>
+
+					<div class="col">
+						<div class="lc-block card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg" lc-helper="background" style="background:url(https://images.unsplash.com/photo-1555952494-efd681c7e3f9?crop=entropy&amp;cs=tinysrgb&amp;fit=crop&amp;fm=jpg&amp;ixid=MnwzNzg0fDB8MXxzZWFyY2h8NHx8Ym9vdHN0cmFwfGVufDB8MHx8fDE2NDYzMjk4NDE&amp;ixlib=rb-1.2.1&amp;q=80&amp;w=1080&amp;h=768&amp;duotone=172E72,28E398)  center / cover no-repeat;">
+							<div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+								<div class="lc-block pt-5 mt-5 mb-4">
+									<div editable="rich">
+										<h2 class="display-6 lh-1 fw-bold">Much longer title that wraps to multiple lines</h2>
+										<p>Quickly design and customize responsive mobile-first sites with Bootstrap.</p>
+									</div>
+								</div>
+								<ul class="lc-block d-flex list-unstyled mt-auto ms-auto"><a class="btn btn-link btn-sm text-white " href="#" role="button">Read more</a></ul>
+							</div>
+						</div>
+					</div>
+
+					<div class="col">
+						<div class="lc-block card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg" lc-helper="background" style="background:url(https://images.unsplash.com/photo-1591439657848-9f4b9ce436b9?crop=entropy&amp;cs=tinysrgb&amp;fit=crop&amp;fm=jpg&amp;ixid=MnwzNzg0fDB8MXxzZWFyY2h8MXx8cGh5dG9ufGVufDB8MHx8fDE2NDYzMjk5MDc&amp;ixlib=rb-1.2.1&amp;q=80&amp;w=1080&amp;h=768&amp;duotone=172E72,28E398 )  center / cover no-repeat;">
+							<div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+								<div class="lc-block pt-5 mt-5 mb-4">
+									<div editable="rich">
+										<h2 class="display-6 lh-1 fw-bold">Another longer title belongs here</h2>
+										<p>Quickly design and customize responsive mobile-first sites with Bootstrap.</p>
+									</div>
+								</div>
+								<ul class="lc-block d-flex list-unstyled mt-auto ms-auto"><a class="btn btn-link btn-sm text-white " href="#" role="button">Read more</a></ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section
+
+		<section>
+			<div class="d-flex text-center min-vh-50" lc-helper="background" style=" background-attachment: fixed; background-size:cover; background-position: center center;background-color:#eee;background-image: url(https://cdn.pixabay.com/photo/2017/06/07/11/58/presets-lightroom-2380141_1280.jpg);">
+				<div class="lc-block  my-3 align-self-center w-100 py-5">
 					<div editable="rich">
-						<h2 class="display-2">No Fear</h2>
+						<h2 class="display-4 text-white">This could be your</h2>
+						<h2 class="display-4 text-white">call to action</h2>
+						<p class="text-white">Lorem int ipsum dolor sit amet when an<br>&nbsp;unknown printer took a galley of type.</p>
+						<p class="text-white">Vivamus id tempor.</p>
 					</div>
-				</div>
-				<div class="lc-block mb-4">
-					<div editable="rich">
-						<p>Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat.&nbsp;</p>
-					</div>
-				</div>
-				<div class="lc-block">
-					<a class="btn btn-light" href="#" role="button">Click me, I'm a button</a>
-				</div>
-				<!-- /lc-block -->
-			</div><!-- /col -->
-		</div>
-	</div>
-</section>
-
-    <div class="container my-5">
-        <nav aria-label="breadcrumb">
-            <ol class="breadcrumb breadcrumb-chevron p-3 bg-body-tertiary rounded-3">
-                <li class="breadcrumb-item"> <a class="link-body-emphasis" href="#">
-                    <svg class="bi" width="16" height="16" aria-hidden="true">
-                            <use xlink:href="#house-door-fill"></use>
-                        </svg> <span class="visually-hidden">Home</span> </a> </li>
-                <li class="breadcrumb-item"> <a class="link-body-emphasis fw-semibold text-decoration-none"
-                        href="#">Library</a> </li>
-                <li class="breadcrumb-item active" aria-current="page">
-                    Data
-                </li>
-            </ol>
-        </nav>
-    </div>
-
-
-   <section id="discover">
-	<div class="container">
-		<div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
-			<div class="col">
-				<div class="lc-block card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg" lc-helper="background" style="background-image: url('https://images.unsplash.com/photo-1560472354-0088b5dc9d8d?crop=entropy&amp;cs=tinysrgb&amp;fit=crop&amp;fm=jpg&amp;ixid=MnwzNzg0fDB8MXxzZWFyY2h8Mnx8d29yZHByZXNzfGVufDB8MHx8fDE2NDYzMjk2OTA&amp;ixlib=rb-1.2.1&amp;q=80&amp;w=1080&amp;h=768&amp;faceindex=1&amp;duotone=172E72,28E398'); background-size:cover">
-					<div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
-						<div class="lc-block pt-5 mt-5 mb-4">
-							<div editable="rich">
-								<h2 class="display-6 lh-1 fw-bold">Short title, long jacket</h2>
-								<p>Quickly design and customize responsive mobile-first sites with Bootstrap.</p>
-							</div>
-						</div>
-						<ul class="lc-block d-flex list-unstyled mt-auto ms-auto"><a class="btn btn-link btn-sm text-white " href="#" role="button">Read more</a></ul>
-					</div>
+					<a class="btn btn-lg btn-light" href="#" role="button">Click me, I'm a button</a>
 				</div>
 			</div>
-
-			<div class="col">
-				<div class="lc-block card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg" lc-helper="background" style="background:url(https://images.unsplash.com/photo-1555952494-efd681c7e3f9?crop=entropy&amp;cs=tinysrgb&amp;fit=crop&amp;fm=jpg&amp;ixid=MnwzNzg0fDB8MXxzZWFyY2h8NHx8Ym9vdHN0cmFwfGVufDB8MHx8fDE2NDYzMjk4NDE&amp;ixlib=rb-1.2.1&amp;q=80&amp;w=1080&amp;h=768&amp;duotone=172E72,28E398)  center / cover no-repeat;">
-					<div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
-						<div class="lc-block pt-5 mt-5 mb-4">
-							<div editable="rich">
-								<h2 class="display-6 lh-1 fw-bold">Much longer title that wraps to multiple lines</h2>
-								<p>Quickly design and customize responsive mobile-first sites with Bootstrap.</p>
-							</div>
-						</div>
-						<ul class="lc-block d-flex list-unstyled mt-auto ms-auto"><a class="btn btn-link btn-sm text-white " href="#" role="button">Read more</a></ul>
-					</div>
-				</div>
-			</div>
-
-			<div class="col">
-				<div class="lc-block card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg" lc-helper="background" style="background:url(https://images.unsplash.com/photo-1591439657848-9f4b9ce436b9?crop=entropy&amp;cs=tinysrgb&amp;fit=crop&amp;fm=jpg&amp;ixid=MnwzNzg0fDB8MXxzZWFyY2h8MXx8cGh5dG9ufGVufDB8MHx8fDE2NDYzMjk5MDc&amp;ixlib=rb-1.2.1&amp;q=80&amp;w=1080&amp;h=768&amp;duotone=172E72,28E398 )  center / cover no-repeat;">
-					<div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
-						<div class="lc-block pt-5 mt-5 mb-4">
-							<div editable="rich">
-								<h2 class="display-6 lh-1 fw-bold">Another longer title belongs here</h2>
-								<p>Quickly design and customize responsive mobile-first sites with Bootstrap.</p>
-							</div>
-						</div>
-						<ul class="lc-block d-flex list-unstyled mt-auto ms-auto"><a class="btn btn-link btn-sm text-white " href="#" role="button">Read more</a></ul>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</section>
-
-    <section>
-	<div class="d-flex text-center min-vh-50" lc-helper="background" style=" background-attachment: fixed; background-size:cover; background-position: center center;background-color:#eee;background-image: url(https://images.unsplash.com/photo-1470214304380-aadaedcfff84?crop=entropy&amp;cs=tinysrgb&amp;fit=crop&amp;fm=jpg&amp;ixid=MnwzNzg0fDB8MXxzZWFyY2h8NTJ8fG9jZWFuJTIwc3VyZnxlbnwwfDB8fHwxNjM0ODM1Mjkx&amp;ixlib=rb-1.2.1&amp;q=80&amp;w=1080&amp;h=768);">
-		<div class="lc-block  my-3 align-self-center w-100 py-5">
-			<div editable="rich">
-				<h2 class="display-4 text-white">This could be your</h2>
-				<h2 class="display-4 text-white">call to action</h2>
-				<p class="text-white">Lorem int ipsum dolor sit amet when an<br>&nbsp;unknown printer took a galley of type.</p>
-				<p class="text-white">Vivamus id tempor.</p>
-			</div>
-			<a class="btn btn-lg btn-light" href="#" role="button">Click me, I'm a button</a>
-		</div>
-	</div>
-</section>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-        crossorigin="anonymous"></script>
+		</section>
+	</main>
 </body>
-<footer>
-    <html lang="en"><head>
- <meta charset="utf-8">
- <meta content="width=device-width, initial-scale=1" name="viewport">
- <title>FreeFrontend.dev Code Snippet</title>
- <link href="https://freefrontend.dev/assets/bootstrap.min.css" rel="stylesheet">
-</head>
-<body>
- <footer class="py-4">
- <div class="container">
- <div class="row align-items-center py-4">
- <div class="col-12 col-lg-3 text-center text-lg-start mb-3 mb-lg-0"><img alt="Free Frontend Logo" class="img-fluid" height="" src="https://freefrontend.dev/wp-content/uploads/free-frontend-logo.png" width="300"></div>
- <div class="col-12 col-lg-6 navbar-expand text-center mb-3 mb-lg-0">
- <ul class="list-unstyled d-block d-lg-flex justify-content-center">
- <li class="nav-item">
- <a class="text-dark text-decoration-none me-lg-3" href="">Home</a>
- </li>
- <li class="nav-item">
- <a class="text-dark text-decoration-none me-lg-3" href="">About</a>
- </li>
- <li class="nav-item">
- <a class="text-dark text-decoration-none me-lg-3" href="">Shop</a>
- </li>
- <li class="nav-item">
- <a class="text-dark text-decoration-none me-lg-3" href="">Gallery</a>
- </li>
- <li class="nav-item">
- <a class="text-dark text-decoration-none" href="">Contact</a>
- </li>
- </ul>
- </div>
- <div class="col-12 col-lg-3 small text-center text-lg-end">
- <a class="text-muted" href="">English <svg class="bi bi-chevron-down ms-1" fill="currentColor" height="16" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg">
- <path d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" fill-rule="evenodd"></path></svg></a>
- </div>
- </div>
- <div class="border-top d-lg-none"></div>
- <div class="text-center py-3">
- <a class="me-2" href=""><svg class="bi bi-pinterest text-primary" fill="currentColor" height="20" viewBox="0 0 16 16" width="20" xmlns="http://www.w3.org/2000/svg">
- <path d="M8 0a8 8 0 0 0-2.915 15.452c-.07-.633-.134-1.606.027-2.297.146-.625.938-3.977.938-3.977s-.239-.479-.239-1.187c0-1.113.645-1.943 1.448-1.943.682 0 1.012.512 1.012 1.127 0 .686-.437 1.712-.663 2.663-.188.796.4 1.446 1.185 1.446 1.422 0 2.515-1.5 2.515-3.664 0-1.915-1.377-3.254-3.342-3.254-2.276 0-3.612 1.707-3.612 3.471 0 .688.265 1.425.595 1.826a.24.24 0 0 1 .056.23c-.061.252-.196.796-.222.907-.035.146-.116.177-.268.107-1-.465-1.624-1.926-1.624-3.1 0-2.523 1.834-4.84 5.286-4.84 2.775 0 4.932 1.977 4.932 4.62 0 2.757-1.739 4.976-4.151 4.976-.811 0-1.573-.421-1.834-.919l-.498 1.902c-.181.695-.669 1.566-.995 2.097A8 8 0 1 0 8 0z"></path></svg></a> <a class="me-2" href=""><svg class="bi bi-twitter text-primary" fill="currentColor" height="20" viewBox="0 0 16 16" width="20" xmlns="http://www.w3.org/2000/svg">
- <path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"></path></svg></a> <a class="me-2" href=""><svg class="bi bi-facebook text-primary" fill="currentColor" height="20" viewBox="0 0 16 16" width="20" xmlns="http://www.w3.org/2000/svg">
- <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"></path></svg></a>
- </div>
- <div class="pt-lg-4 pb-4 pb-lg-3 text-center small">
- <p class="mb-0"><a class="d-block d-lg-inline text-muted mx-lg-1 mb-2 mb-lg-0" href="">Privacy Policy</a> <a class="d-block d-lg-inline text-muted mx-lg-1 mb-2 mb-lg-0" href="">Terms of Service</a> <a class="d-block d-lg-inline text-muted mx-lg-1 mb-2 mb-lg-0" href="">Site Map</a></p>
- <p class="text-muted mb-0">© 2023 FreeFrontend.dev. All rights reserved.</p>
- </div>
- </div>
- </footer>
- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js">
- </script>
 
-</body></html>
+<footer>
+    
+<body>
+<footer class="py-4">
+	<div class="container">
+		<div class="row align-items-center py-4">
+			<div class="col-12 col-lg-3 text-center text-lg-start mb-3 mb-lg-0"><img alt="Free Frontend Logo"
+					class="img-fluid" height="" src="https://freefrontend.dev/wp-content/uploads/free-frontend-logo.png"
+					width="300"></div>
+			<div class="col-12 col-lg-6 navbar-expand text-center mb-3 mb-lg-0">
+				<ul class="list-unstyled d-block d-lg-flex justify-content-center">
+					<li class="nav-item">
+						<a class="text-dark text-decoration-none me-lg-3" href="">Home</a>
+					</li>
+					<li class="nav-item">
+						<a class="text-dark text-decoration-none me-lg-3" href="">About</a>
+					</li>
+					<li class="nav-item">
+						<a class="text-dark text-decoration-none me-lg-3" href="">Shop</a>
+					</li>
+					<li class="nav-item">
+						<a class="text-dark text-decoration-none me-lg-3" href="">Gallery</a>
+					</li>
+					<li class="nav-item">
+						<a class="text-dark text-decoration-none" href="">Contact</a>
+					</li>
+				</ul>
+			</div>
+			<div class="col-12 col-lg-3 small text-center text-lg-end">
+				<a class="text-muted" href="">English <svg class="bi bi-chevron-down ms-1" fill="currentColor"
+						height="16" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg">
+						<path
+							d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"
+							fill-rule="evenodd"></path>
+					</svg></a>
+			</div>
+		</div>
+		<div class="border-top d-lg-none"></div>
+		<div class="text-center py-3">
+			<a class="me-2" href=""><svg class="bi bi-pinterest text-primary" fill="currentColor" height="20"
+					viewBox="0 0 16 16" width="20" xmlns="http://www.w3.org/2000/svg">
+					<path
+						d="M8 0a8 8 0 0 0-2.915 15.452c-.07-.633-.134-1.606.027-2.297.146-.625.938-3.977.938-3.977s-.239-.479-.239-1.187c0-1.113.645-1.943 1.448-1.943.682 0 1.012.512 1.012 1.127 0 .686-.437 1.712-.663 2.663-.188.796.4 1.446 1.185 1.446 1.422 0 2.515-1.5 2.515-3.664 0-1.915-1.377-3.254-3.342-3.254-2.276 0-3.612 1.707-3.612 3.471 0 .688.265 1.425.595 1.826a.24.24 0 0 1 .056.23c-.061.252-.196.796-.222.907-.035.146-.116.177-.268.107-1-.465-1.624-1.926-1.624-3.1 0-2.523 1.834-4.84 5.286-4.84 2.775 0 4.932 1.977 4.932 4.62 0 2.757-1.739 4.976-4.151 4.976-.811 0-1.573-.421-1.834-.919l-.498 1.902c-.181.695-.669 1.566-.995 2.097A8 8 0 1 0 8 0z">
+					</path>
+				</svg></a> <a class="me-2" href=""><svg class="bi bi-twitter text-primary" fill="currentColor"
+					height="20" viewBox="0 0 16 16" width="20" xmlns="http://www.w3.org/2000/svg">
+					<path
+						d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z">
+					</path>
+				</svg></a> <a class="me-2" href=""><svg class="bi bi-facebook text-primary" fill="currentColor"
+					height="20" viewBox="0 0 16 16" width="20" xmlns="http://www.w3.org/2000/svg">
+					<path
+						d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z">
+					</path>
+				</svg></a>
+		</div>
+		<div class="pt-lg-4 pb-4 pb-lg-3 text-center small">
+			<p class="mb-0"><a class="d-block d-lg-inline text-muted mx-lg-1 mb-2 mb-lg-0" href="">Privacy Policy</a> <a
+					class="d-block d-lg-inline text-muted mx-lg-1 mb-2 mb-lg-0" href="">Terms of Service</a> <a
+					class="d-block d-lg-inline text-muted mx-lg-1 mb-2 mb-lg-0" href="">Site Map</a></p>
+			<p class="text-muted mb-0">© 2023 FreeFrontend.dev. All rights reserved.</p>
+		</div>
+	</div>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js">
+</script>
 </footer>
 </html>

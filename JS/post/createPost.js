@@ -1,5 +1,7 @@
-import { createPost, getPost, updatePost, deletePost, isLoggedIn} from "../api.js";
-import { showModal, closeModal } from "../components/modal.js";
+
+
+// Fra tidligere prosjekt. se om jeg trenger noe eller kan bruke noe
+
 
 const submitButton = document.querySelector("#submit");
 const deleteButton = document.querySelector("#delete");

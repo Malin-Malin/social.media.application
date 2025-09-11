@@ -1,0 +1,1 @@
+// A function that renders a single post card
