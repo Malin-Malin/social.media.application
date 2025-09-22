@@ -1,9 +1,8 @@
 // Generic fetch client for all requests
 // SETUP------------------------------------------------------------------
-import {load} from "../storage/index.js";
+import {load} from "../storage/storageService.js";
 
 const BASE_URL = "https://v2.api.noroff.dev";
-
 const API_KEY = '9bfb5ab8-4778-439a-8f04-c9d2efdd075b';
 
 
@@ -18,10 +17,9 @@ async function apiClient(endpoint, options = {}) {
 
     if (accessToken) headers["Authorization"] = `Bearer ${accessToken}`;
 
-
   const config = {
     method: body ? "POST" : "GET", // default GET unless body is provided
-    ...customOptions,
+    ...customOptions, // allow overrides
     headers: {
       ...headers,
       ...customOptions.headers, // allow overrides

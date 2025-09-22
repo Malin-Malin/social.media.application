@@ -7,6 +7,12 @@ const toggle = document.querySelector('#toggle-mode');
 const message = document.querySelector('#status-message');
 const nameField = document.querySelector('#name-field')
 
+// exit modal- login form
+  document.getElementById('close-modal-btn').addEventListener('click', function() {
+  window.location.href = '/'; 
+});
+
+// default is login
 let isLoginMode = true; 
 
 // switch between Login and Sign up

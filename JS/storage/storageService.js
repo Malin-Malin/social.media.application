@@ -30,8 +30,14 @@ export function save(key, value) {
  * textboxElement.innerText = enteredText;
  * 
  */
-export function load(key) {
-    return localStorage.getItem(key);;
+export function load(key, parse = false) {
+    let result = localStorage.getItem(key);
+
+    if (parse && result) {
+        result = JSON.parse(result);
+    }
+    
+    return result;
 }
 
 /**

@@ -1,5 +1,5 @@
  // Handles login, register, etc.
-import {save, remove, load} from '../storage/index.js';
+import {save, remove, load} from '../storage/storageService.js';
 import {post} from './apiClient.js';
 
 const LOGIN_ENDPOINT = '/auth/login';
@@ -15,9 +15,9 @@ const REGISTER_ENDPOINT = '/auth/register';
  */
 export async function registerUser(name, username, password) {
     const userData = {
-        'name': name,
-        'email': username,
-        'password': password,
+        name: name,
+        email: username,
+        password: password,
     }
     try {
         const response = await post(REGISTER_ENDPOINT, userData);
@@ -38,8 +38,8 @@ export async function registerUser(name, username, password) {
  */
 export async function loginUser(username, password) {
     const credentials = {
-        'email': username,
-        'password': password,
+        email: username,
+        password: password,
     } 
     try {
         const response = await post(LOGIN_ENDPOINT, credentials);
@@ -79,6 +79,5 @@ export function isLoggedIn() {
  * @returns {object|null}
  */
 export function getUserProfile() {
-  const profile = load('profile');
-  return profile ? JSON.parse(profile) : null;
+  return load('profile',true);
 }

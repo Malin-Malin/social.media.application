@@ -5,32 +5,34 @@
 
 
   // Breadcrumb
-  let url = "";
-  parts.forEach((part, index) => {
-    url += `/${part}`;
-    const li = document.createElement("li");
-    li.className = "breadcrumb-item";
+  // let url = "";
+  // parts.forEach((part, index) => {
+  //   url += `/${part}`;
+  //   const li = document.createElement("li");
+  //   li.className = "breadcrumb-item";
 
-    const isLast = index === parts.length - 1;
+  //   const isLast = index === parts.length - 1;
 
-    if (isLast) {
-      li.classList.add("active");
-      li.setAttribute("aria-current", "page");
-      li.textContent = decodeURIComponent(part);
-    } else {
-      li.innerHTML = `<a class="link-body-emphasis fw-semibold text-decoration-none" href="${url}">${decodeURIComponent(part)}</a>`;
-    }
+  //   if (isLast) {
+  //     li.classList.add("active");
+  //     li.setAttribute("aria-current", "page");
+  //     li.textContent = decodeURIComponent(part);
+  //   } else {
+  //     li.innerHTML = `<a class="link-body-emphasis fw-semibold text-decoration-none" href="${url}">${decodeURIComponent(part)}</a>`;
+  //   }
 
-    breadcrumbList.appendChild(li);
-  });
+  //   breadcrumbList.appendChild(li);
+  // });
 
 
 //   Loading
-<div class="d-flex justify-content-center">
+{/* <div class="d-flex justify-content-center">
   <div class="spinner-border" role="status">
     <span class="visually-hidden">Loading...</span>
   </div>
-</div>
+</div> */}
+
+
 
 // remember to make this work----------------------------------------
 
@@ -38,8 +40,8 @@
 fetch('/components/header.html')
   .then(response => response.text())
   .then(data => {
-    document.getElementById('header-container').innerHTML = data;
-    updateMenu();
+    document.getElementById('main-header').innerHTML = data;
+    // updateMenu();
     const signOutElement = document.getElementById("sign-out");
     if (signOutElement) {
       signOutElement.addEventListener("click", function() {
@@ -62,3 +64,38 @@ fetch('/components/footer.html')
     document.getElementById('footer-container').innerHTML = data;
   })
   .catch(error => console.error('Footer load failed:', error));
+
+  // Breadcrumbs - CODING 
+
+fetch('/components/breadcrumb.html')
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById('breadcrumb').innerHTML = data;
+    // Optionally, update the breadcrumb items here based on the current page
+    let url = ""; // Reset URL for breadcrumb links
+    parts.forEach((part, index) => {
+      url += `/${part}`;
+      const li = document.createElement("li");
+      li.className = "breadcrumb-item";
+      const isLast = index === parts.length - 1;
+      if (isLast) {
+        li.classList.add("active");
+        li.setAttribute("aria-current", "page");
+        li.textContent = decodeURIComponent(part);
+      } else {
+        li.innerHTML = `<a class="link-body-emphasis fw-semibold text-decoration-none" href="${url}">${decodeURIComponent(part)}</a>`;
+      }
+      breadcrumbList.appendChild(li);
+    });
+  })
+  .catch(error => console.error('Breadcrumb load failed:', error));
+
+
+  // Breadcrumbs WHEN I ASKED THE CHAT
+
+  // fetch('/Components/breadcrumb.html')
+  // .then(response => response.text())
+  // .then(data => {
+  //   document.getElementById('breadcrumb').innerHTML = data;
+  //   // Optionally, update the breadcrumb items here based on the current page
+  // });
