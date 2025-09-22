@@ -89,7 +89,7 @@ saveButton.addEventListener("click", async (event) => {
         } else {
             post = await createPost(title,postBody,tags,{url:mediaUrl,alt:mediaAlt});
         }
-        window.location.href = `/post.html?id=${post.id}`;
+    window.location.href = `/post/post.html?id=${post.id}`;
         // closeModal();
     } catch (error) {
         // closeModal();

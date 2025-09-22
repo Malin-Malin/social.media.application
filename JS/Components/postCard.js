@@ -37,12 +37,12 @@ export function generateCard(post) {
 
             // Add event listeners for navigation
     card.querySelector('.view-btn').addEventListener('click', () => {
-        window.location.href = `/post.html?id=${post.id}`;
+    window.location.href = `/post/post.html?id=${post.id}`;
     });
     if(post.author.email==getUserProfile().email) {
         const editButton = card.querySelector('.edit-btn');
         editButton.addEventListener('click', () => {
-            window.location.href = `/createPost.html?id=${post.id}`;
+            window.location.href = `/post/createPost.html?id=${post.id}`;
         });
         editButton.classList.remove('d-none');
     }

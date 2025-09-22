@@ -57,13 +57,6 @@ fetch('/components/header.html')
   })
   .catch(error => console.error('Header load failed:', error));
 
-//   Footer
-fetch('/components/footer.html')
-  .then(response => response.text())
-  .then(data => {
-    document.getElementById('footer-container').innerHTML = data;
-  })
-  .catch(error => console.error('Footer load failed:', error));
 
   // Breadcrumbs - CODING 
 
@@ -99,3 +92,11 @@ fetch('/components/breadcrumb.html')
   //   document.getElementById('breadcrumb').innerHTML = data;
   //   // Optionally, update the breadcrumb items here based on the current page
   // });
+
+  //   Footer
+fetch('/components/footer.html')
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById('main-footer').innerHTML = data;
+  })
+  .catch(error => console.error('Footer load failed:', error));
