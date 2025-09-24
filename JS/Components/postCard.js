@@ -10,6 +10,8 @@ export function generateCard(post) {
 //TODO: set fallback image
     const mediaUrl = post.media && post.media.url ? post.media.url : '/image/food_vibe02.jpg';
     const mediaAlt = post.media && post.media.alt ? post.media.alt : 'Generic fallback image';
+    const authorName = post.author?.name ?? post.owner ?? "Unknown";
+    const author = shortenStringLength(authorName, 10); 
     
     const cardContainer = document.createElement('div');
     cardContainer.classList.add('col');
@@ -30,10 +32,9 @@ export function generateCard(post) {
                     <button type="button" class="btn btn-sm btn-outline-secondary view-btn">View</button>
                     <button type="button" class="btn btn-sm btn-outline-secondary edit-btn d-none">Edit</button>
                 </div>
-                <small class="text-body-secondary">9 mins</small>
+                <small class="text-body-secondary">${authorName}</small>
             </div>
         </div>`
-
 
             // Add event listeners for navigation
     card.querySelector('.view-btn').addEventListener('click', () => {

@@ -20,9 +20,9 @@ function displayPost(post) {
     <div class="col-md-6 order-md-1">	
         <h2>${post.title}</h2>
         <p class="lc-block text-secondary pb-4 post-body"></p>
-        <div>
-            <img src="${authorAvatar}" alt="${authorName}"/> 
-            <strong>${authorName}</strong>
+        <div class="author-info d-flex align-items-center p-3 border-top bg-light shadow-sm">
+            <img src="${authorAvatar}" alt="${authorName}" class="rounded-circle me-3" style="width:48px; height:48px;"/> 
+            <strong class="fw-bold">${authorName}</strong>
         </div>
     </div>
     `;
