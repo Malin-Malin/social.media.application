@@ -14,7 +14,7 @@ const SEARCH_ENDPOINT = '/social/profiles/search?q='; //search
 // get by id 
 
 export async function getProfile(name, following = false, followers = false, posts = false) {
-  const profile = await get(`${PROFILES_ENDPOINT}/${name}?following=${following}&followers=${followers}&posts=${posts}`);
+  const profile = await get(`${PROFILES_ENDPOINT}/${name}?_following=${following}&_followers=${followers}&_posts=${posts}`);
   return profile.data;
 }
 
@@ -52,6 +52,7 @@ export async function getAllPostsByProfile(name) {
 
 export async function followProfile(profileName) {
   const response = await put(`${PROFILES_ENDPOINT}/${profileName}${FOLLOW_SUBENDPOINT}`);
+  await getMyFullProfile(); //update my profile in local storage  
   return response.following;
 }
 
@@ -63,6 +64,7 @@ export async function followProfile(profileName) {
 
 export async function unfollowProfile(profileName) {
   const response = await put(`${PROFILES_ENDPOINT}/${profileName}${UNFOLLOW_SUBENDPOINT}`);
+  await getMyFullProfile(); //update my profile in local storage  
   return response.following;
 }
 

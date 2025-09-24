@@ -22,7 +22,7 @@ function displayPost(post) {
         <p class="lc-block text-secondary pb-4 post-body"></p>
         <div class="author-info d-flex align-items-center p-3 border-top bg-light shadow-sm">
             <img src="${authorAvatar}" alt="${authorName}" class="rounded-circle me-3" style="width:48px; height:48px;"/> 
-            <strong class="fw-bold">${authorName}</strong>
+            <a href="/account/viewProfile.html?u=${authorName}"><strong class="fw-bold">${authorName}</strong></a>
         </div>
     </div>
     `;

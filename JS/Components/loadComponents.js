@@ -13,6 +13,7 @@ function displayBreadcrumbs() {
     '/post/feed.html': ['Home', 'Feed'],
     '/post/createPost.html': ['Home', 'Feed', 'Create Post'],
     '/post/post.html': ['Home', 'Feed', 'Post'],
+    '/account/viewProfile.html': ['Home', 'Profile'],
   };
 
   // Get current path
