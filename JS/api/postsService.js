@@ -2,7 +2,8 @@
 import {post, get, put, del} from './apiClient.js';
 
 const postEndpoint = '/social/posts';
-const searchPostEndpoint = '/social/posts/search?q=';
+const searchPostEndpoint = '/social/posts/search';
+const profilePostsEndpoint = '/social/profiles';
 
 export async function getPostById(id,includeAuthor=false) {
     const response = await get(`${postEndpoint}/${id}?_author=${includeAuthor}`);
@@ -17,7 +18,12 @@ export async function getAllPosts(limit = 9, includeAuthor=false, page=1) {
     const response = await get(`${postEndpoint}?limit=${limit}&_author=${includeAuthor}`);
     return response.data;
 };
-// why not jason.data
+
+export async function getPostsByUser(userName, limit = 9, includeAuthor=false) {    
+    const response = await get(`${profilePostsEndpoint}/${userName}/posts?limit=${limit}&_author=${includeAuthor}`);   
+    return response.data;
+}
+
 
 export async function createPost(title, body, tags = [], media) {
     const newPost = {
@@ -44,7 +50,7 @@ export async function deletePost(id) {
     return true;
 }
 
-export async function searchPosts(query) {
-    const response = await get(`${searchPostEndpoint}${query}`);
+export async function searchPosts(query, limit = 9, includeAuthor=false) {
+    const response = await get(`${searchPostEndpoint}?q=${query}&limit=${limit}&_author=${includeAuthor}`);
     return response.data;
 }

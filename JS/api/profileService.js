@@ -47,6 +47,11 @@ export async function getAllPostsByProfile(name) {
 //-----------------------------------------------update profile----------------------------
 // put
 //this is not requierd
+export async function updateProfile(profileName, profileData) {
+  const updatedProfile = await put(`${PROFILES_ENDPOINT}/${profileName}`, profileData);  
+  await getMyFullProfile(); //update my profile in local storage
+  return updatedProfile;
+}
 
 //-----------------------------------------------follow profile----------------------------
 

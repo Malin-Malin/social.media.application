@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', async function() {
     const user = await getMyFullProfile(); // e.g., from API or localStorage
     document.getElementById('avatar').src = user.avatar?.url || '/image/avatar.jpg';
     document.getElementById('username').textContent = user.name || 'No Name';
-    document.getElementById('bio').textContent = user.bio || 'No bio available';
+    document.getElementById('bio').innerText = user.bio || 'No bio available';
     document.getElementById('followers-count').textContent = user._count.followers ? user._count.followers : '0';
     document.getElementById('following-count').textContent = user._count.following ? user._count.following : '0';
     document.getElementById('post-count').textContent = user._count.posts ? user._count.posts : '0';
