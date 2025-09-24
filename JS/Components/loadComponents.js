@@ -1,14 +1,9 @@
 
-  const path = window.location.pathname; // e.g. "/library/data"
-  const parts = path.split("/").filter(Boolean); // Remove empty parts
-  const breadcrumbList = document.getElementById("breadcrumb-list");
-
-
-  document.addEventListener('DOMContentLoaded', function() {
+// Breadcrumb 
+function displayBreadcrumbs() {
   const breadcrumbList = document.getElementById('breadcrumb-list');
   if (!breadcrumbList) return;
 
-  // Map URL paths to breadcrumb names
   const breadcrumbMap = {
     '/': ['Home'],
     '/index.html': ['Home'],
@@ -18,7 +13,6 @@
     '/post/feed.html': ['Home', 'Feed'],
     '/post/createPost.html': ['Home', 'Feed', 'Create Post'],
     '/post/post.html': ['Home', 'Feed', 'Post'],
-    // Add more mappings as needed
   };
 
   // Get current path
@@ -44,27 +38,7 @@
     }
   });
   breadcrumbList.innerHTML = html;
-});
-
-  // Breadcrumb
-  // let url = "";
-  // parts.forEach((part, index) => {
-  //   url += `/${part}`;
-  //   const li = document.createElement("li");
-  //   li.className = "breadcrumb-item";
-
-  //   const isLast = index === parts.length - 1;
-
-  //   if (isLast) {
-  //     li.classList.add("active");
-  //     li.setAttribute("aria-current", "page");
-  //     li.textContent = decodeURIComponent(part);
-  //   } else {
-  //     li.innerHTML = `<a class="link-body-emphasis fw-semibold text-decoration-none" href="${url}">${decodeURIComponent(part)}</a>`;
-  //   }
-
-  //   breadcrumbList.appendChild(li);
-  // });
+};
 
 
 //   Loading
@@ -83,6 +57,7 @@ fetch('/components/header.html')
   .then(response => response.text())
   .then(data => {
     document.getElementById('main-header').innerHTML = data;
+    displayBreadcrumbs();
     // updateMenu();
     const signOutElement = document.getElementById("sign-out");
     if (signOutElement) {
@@ -102,28 +77,28 @@ fetch('/components/header.html')
 
   // Breadcrumbs - CODING 
 
-fetch('/components/breadcrumb.html')
-  .then(response => response.text())
-  .then(data => {
-    document.getElementById('breadcrumb').innerHTML = data;
-    // Optionally, update the breadcrumb items here based on the current page
-    let url = ""; // Reset URL for breadcrumb links
-    parts.forEach((part, index) => {
-      url += `/${part}`;
-      const li = document.createElement("li");
-      li.className = "breadcrumb-item";
-      const isLast = index === parts.length - 1;
-      if (isLast) {
-        li.classList.add("active");
-        li.setAttribute("aria-current", "page");
-        li.textContent = decodeURIComponent(part);
-      } else {
-        li.innerHTML = `<a class="link-body-emphasis fw-semibold text-decoration-none" href="${url}">${decodeURIComponent(part)}</a>`;
-      }
-      breadcrumbList.appendChild(li);
-    });
-  })
-  .catch(error => console.error('Breadcrumb load failed:', error));
+// fetch('/components/breadcrumb.html')
+//   .then(response => response.text())
+//   .then(data => {
+//     document.getElementById('breadcrumb').innerHTML = data;
+//     // Optionally, update the breadcrumb items here based on the current page
+//     let url = ""; // Reset URL for breadcrumb links
+//     parts.forEach((part, index) => {
+//       url += `/${part}`;
+//       const li = document.createElement("li");
+//       li.className = "breadcrumb-item";
+//       const isLast = index === parts.length - 1;
+//       if (isLast) {
+//         li.classList.add("active");
+//         li.setAttribute("aria-current", "page");
+//         li.textContent = decodeURIComponent(part);
+//       } else {
+//         li.innerHTML = `<a class="link-body-emphasis fw-semibold text-decoration-none" href="${url}">${decodeURIComponent(part)}</a>`;
+//       }
+//       breadcrumbList.appendChild(li);
+//     });
+//   })
+//   .catch(error => console.error('Breadcrumb load failed:', error));
 
 
   // Breadcrumbs WHEN I ASKED THE CHAT

@@ -7,7 +7,6 @@
     <meta name="description" content="">
     <meta name="keywords" content="">
     <meta name="author" content="Malin Skrettingland">
-    <link rel="stylesheet" href="./CSS/Base/globalStyleSheet.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <title>home page</title>
@@ -18,6 +17,11 @@
 <header id="main-header">
 </header>
 	<main>
+
+		<h1 class="text-center my-4 fw-bold display-6">Welcome to Sosial Media</h1>
+	<p class="text-center px-5 mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc ut laoreet cursus, enim erat dictum urna, nec dictum velit enim eu erat.</p>
+
+
 		<!-- Thumbnail for posts -->
 		<section id="discover">
 			<div class="container">
@@ -66,6 +70,50 @@
 				</div>
 			</div>
 		</section>
+
+		       <!-- Top bloggers section -->   
+        <section class="mt-5">
+            <div class="container py-7 mb-5">
+                <div class="row">
+                    <div class="col-12 text-center mb-4">
+                        <h2 class="fw-bold display-6">My followers</h2>
+                    </div>
+                </div>
+                <div class="row py-4 justify-content-center">
+                    <div class="col-12 col-md-4 py-4 text-center">
+                        <img alt="Neil Amstrong" class="rounded-circle mb-3" src="https://i.pravatar.cc/400?img=11"
+                            width="96" height="96">
+                        <h5><strong>Neil Amstrong</strong></h5>
+                        <small class="text-secondary">CEO at Acme inc</small>
+                        <p class="mt-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc et metus id ligula
+                            malesuada placerat.</p>
+                    </div>
+                    <div class="col-12 col-md-4 py-4 text-center">
+                        <img alt="Rich Green" class="rounded-circle mb-3" src="https://i.pravatar.cc/400?img=12"
+                            width="96" height="96">
+                        <h5><strong>Rich Green</strong></h5>
+                        <small class="text-secondary">Founder at Acme inc</small>
+                        <p class="mt-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc et metus id ligula
+                            malesuada placerat.</p>
+                    </div>
+                    <div class="col-12 col-md-4 py-4 text-center">
+                        <img alt="Mary Kate" class="rounded-circle mb-3" src="https://i.pravatar.cc/400?img=16"
+                            width="96" height="96">
+                        <h5><strong>Mary Kate</strong></h5>
+                        <small class="text-secondary">UI Designer at myBRAND</small>
+                        <p class="mt-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc et metus id ligula
+                            malesuada placerat.</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 text-center">
+                        <button class="btn btn-sm btn-outline-primary" id="expand-following-btn" type="button">View
+                            More</button>
+                    </div>
+                </div>
+                <div class="row" id="more-following-row" style="display:none;"></div>
+            </div>
+        </section>
 
 		<section>
 			<div class="d-flex text-center min-vh-50" lc-helper="background" style=" background-attachment: fixed; background-size:cover; background-position: center center;background-color:#eee;background-image: url(https://cdn.pixabay.com/photo/2017/06/07/11/58/presets-lightroom-2380141_1280.jpg);">

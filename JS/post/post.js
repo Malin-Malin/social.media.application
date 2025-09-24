@@ -9,12 +9,10 @@ const postId = urlParams.get("id");
 const postContainer = document.getElementById('post-container');
 
 function displayPost(post) {
-
     const mediaUrl = post.media && post.media.url ? post.media.url : '/image/food_vibe02.jpg';
     const mediaAlt = post.media && post.media.alt ? post.media.alt : 'Generic fallback image';
-            // ------------------------------------------------------------------
-            const authorName = post.author?.name ?? post.owner ?? "Unknown";
-            const authorAvatar = post.author?.avatar?.url : '/image/avatar.jpg'; // fallback image
+    const authorName = post.author?.name ?? post.owner ?? "Unknown";
+    const authorAvatar = post.author?.avatar?.url ? post.author.avatar.url : '/image/avatar.jpg'; // fallback image
 
     postContainer.innerHTML = `
     <img class="col-md-6 order-md-2 ps-4 d-flex"
@@ -34,7 +32,7 @@ function displayPost(post) {
 
 async function main() {
     try {
-        const post = await getPostById(postId);
+        const post = await getPostById(postId,true);
         displayPost(post);    
     } catch (error) {
         window.location.href = '/404.html'
@@ -42,12 +40,3 @@ async function main() {
 }
 
 main();
-
-
-// -------------------------------------------------
-
-import { getPostsByProfile } from "./api/posts.js"; //WRONG
-
-// ...inside init() after you know `name`:
-const postsRes = await getPostsByProfile(name, { author: true });
-renderPosts(postsRes.data);
