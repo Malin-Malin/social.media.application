@@ -9,10 +9,6 @@ export async function getPostById(id,includeAuthor=false) {
     const response = await get(`${postEndpoint}/${id}?_author=${includeAuthor}`);
     return response.data;
 }
-// error handeling?!
-//I want to get the media URL
-//video 30:00
-
 
 export async function getAllPosts(limit = 9, includeAuthor=false, page=1) {
     const response = await get(`${postEndpoint}?limit=${limit}&page=${page}&_author=${includeAuthor}`);

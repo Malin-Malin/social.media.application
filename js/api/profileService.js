@@ -11,7 +11,6 @@ const SEARCH_ENDPOINT = '/social/profiles/search?q='; //search
 
 
 //-----------------------------------------------single profile----------------------------
-// get by id 
 
 export async function getProfile(name, following = false, followers = false, posts = false) {
   const profile = await get(`${PROFILES_ENDPOINT}/${name}?_following=${following}&_followers=${followers}&_posts=${posts}`);
@@ -35,7 +34,6 @@ export async function getMyFullProfile(){
 }
 
 //----------------------------------------------all posts by profile----------------------------
-// get
 // The response is the same as the posts endpoint, and accepts the same optional query parameters and flags
 
 export async function getAllPostsByProfile(name) {
@@ -44,8 +42,6 @@ export async function getAllPostsByProfile(name) {
 } 
 
 //-----------------------------------------------update profile----------------------------
-// put
-//this is not requierd
 export async function updateProfile(profileName, profileData) {
   const updatedProfile = await put(`${PROFILES_ENDPOINT}/${profileName}`, profileData);  
   await getMyFullProfile(); //update my profile in local storage
@@ -53,14 +49,11 @@ export async function updateProfile(profileName, profileData) {
 }
 
 //-----------------------------------------------follow profile----------------------------
-
 export async function followProfile(profileName) {
   const response = await put(`${PROFILES_ENDPOINT}/${profileName}${FOLLOW_SUBENDPOINT}`);
   await getMyFullProfile(); //update my profile in local storage  
   return response.following;
 }
-
-// TODO: I should put the list into something- how else can I see it? 
 
 
 
@@ -83,7 +76,7 @@ export function isFollowing(profileName) {
 }
 
 
-// ------------------------------serach profiles---------------------------------------------
+// ------------------------------search profiles---------------------------------------------
 
 export async function searchProfiles(query) {
   const profiles = await get(`${SEARCH_ENDPOINT}${query}`);  

@@ -42,18 +42,6 @@ function displayBreadcrumbs() {
   breadcrumbList.innerHTML = html;
 };
 
-
-//   Loading
-{/* <div class="d-flex justify-content-center">
-  <div class="spinner-border" role="status">
-    <span class="visually-hidden">Loading...</span>
-  </div>
-</div> */}
-
-
-
-// remember to make this work----------------------------------------
-
 //   Headers
 fetch('/components/header.html')
   .then(response => response.text())
@@ -63,14 +51,14 @@ fetch('/components/header.html')
 
     const loginLink = document.getElementById("login-link");
     const profileDropdown = document.getElementById("profile-dropdown");
-    // if (!isLoggedIn()) {
-    //   profileDropdown.classList.add("d-none");
-    //   loginLink.classList.remove("d-none");
-    // } else {
-    //   profileDropdown.classList.remove("d-none");
-    //     loginLink.classList.add("d-none");
-    // }
-    // updateMenu();
+    if (!isLoggedIn()) {
+      profileDropdown.classList.add("d-none");
+      loginLink.classList.remove("d-none");
+    } else {
+      profileDropdown.classList.remove("d-none");
+        loginLink.classList.add("d-none");
+    }
+    updateMenu();
     const signOutElement = document.getElementById("sign-out");
     if (signOutElement) {
       signOutElement.addEventListener("click", function() {

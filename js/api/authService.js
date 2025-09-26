@@ -25,9 +25,6 @@ export async function registerUser(name, username, password) {
     } catch (error) {
         throw error;
     }
-    /*
-    finally - turn of loadingspinner?!
-    */
 }
 
 /**
