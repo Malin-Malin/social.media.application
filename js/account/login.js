@@ -41,7 +41,7 @@ form.addEventListener('submit', async (e) => {
 
     if (isLoginMode) {
       const profile = await loginUser(email, password);
-      message.textContent = `Welcome back, ${profile.name || profile.email}!`;
+      window.location.href = '/post/feed.html'; // Redirect to feed page on successful login
     } else {
       await registerUser(name, email, password);
       toggle.click();

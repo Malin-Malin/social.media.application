@@ -58,7 +58,6 @@ fetch('/components/header.html')
       profileDropdown.classList.remove("d-none");
         loginLink.classList.add("d-none");
     }
-    updateMenu();
     const signOutElement = document.getElementById("sign-out");
     if (signOutElement) {
       signOutElement.addEventListener("click", function() {
