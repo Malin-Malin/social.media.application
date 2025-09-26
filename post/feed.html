@@ -4,77 +4,78 @@
 <head>
     <meta charset="UFT-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="keywords" content="">
+    <meta name="description"
+        content="Browse the latest posts from the community. Discover trending topics, follow creators, and explore new content on Social Media App.">
+    <meta name="keywords"
+        content="social media feed, latest posts, trending, discover, community, bloggers, creators, explore">
     <meta name="author" content="Malin Skrettingland">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-
-    <title>Post Feed</title>
+    <title>Feed | Social Media App</title>
     <script src="https://kit.fontawesome.com/408f165299.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
-    <header id="main-header">    
+    <header id="main-header">
     </header>
     <main>
-    
         <!-- posts container-->
         <div class="album py-5 bg-body-tertiary">
             <div class="container">
                 <h1 id="page-header">Post feed</h1>
             </div>
         </div>
-
-   <!-- search  -->       
-    <section class="container mb-3 mt-4">
-        <div class="row align-items-center">
-            <div class="col-auto">
-            <ul class="navbar-nav">
-                <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Dropdown
-                </a>
-                <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#">Action</a></li>
-                    <li><a class="dropdown-item" href="#">Another action</a></li>
-                    <li><hr class="dropdown-divider"></li>
-                    <li><a class="dropdown-item" href="#">Something else here</a></li>
-                </ul>
-                </li>
-            </ul>
+        <!-- search  -->
+        <section class="container mb-3 mt-4">
+            <div class="row align-items-center">
+                <div class="col-auto">
+                    <ul class="navbar-nav">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                Dropdown
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Action</a></li>
+                                <li><a class="dropdown-item" href="#">Another action</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col">
+                    <form class="d-flex" role="search">
+                        <input id="search-input" class="form-control me-2" type="search" placeholder="Search"
+                            aria-label="Search" />
+                        <button id="search-button" class="btn btn-outline-success" type="submit">Search</button>
+                    </form>
+                </div>
             </div>
+        </section>
 
+        <!-- post feed -->
+        <div id="post-matrix" class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-5 mx-5">
             <div class="col">
-            <form class="d-flex" role="search">
-                <input id="search-input" class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
-                <button id="search-button" class="btn btn-outline-success" type="submit">Search</button>
-            </form>
-            </div>
-        </div>
-    </section>
-
-
-
-    <!-- post feed -->
-    <div id="post-matrix" class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-5 mx-5">
-        <div class="col">
-            <div class="card shadow-sm">
-                    <img src="/image/avatar.jpg" class="card-img-top img-fluid mx-auto d-block min-vw-20" style="height:225px; object-fit:cover;" alt="Thumbnail">                <div class="card-body">
-                    <p class="card-text">This is a wider card with supporting text below as a natural
-                        lead-in to additional content. This content is a little bit longer.</p>
-                    <div class="d-flex justify-content-between align-items-center">
-                        <div class="btn-group"> <button type="button"
-                                class="btn btn-sm btn-outline-secondary">View</button> <button type="button"
-                                class="btn btn-sm btn-outline-secondary">Edit</button> </div> <small
-                            class="text-body-secondary">9 mins</small>
+                <div class="card shadow-sm">
+                    <img src="/image/avatar.jpg" class="card-img-top img-fluid mx-auto d-block min-vw-20"
+                        style="height:225px; object-fit:cover;" alt="Thumbnail">
+                    <div class="card-body">
+                        <p class="card-text">This is a wider card with supporting text below as a natural
+                            lead-in to additional content. This content is a little bit longer.</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="btn-group"> <button type="button"
+                                    class="btn btn-sm btn-outline-secondary">View</button> <button type="button"
+                                    class="btn btn-sm btn-outline-secondary">Edit</button> </div> <small
+                                class="text-body-secondary">9 mins</small>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-        
-    </div>
-            <!-- posts -->
+        <!-- posts -->
         <div class="album py-5 bg-body-tertiary">
             <div class="container">
                 <h2>Topp Posts</h2>
@@ -102,7 +103,6 @@
                     </div>
                 </div>
             </div>
-
             <div class="row g-0 align-items-center">
                 <div class="col-lg-6">
                     <div class="lc-block">
