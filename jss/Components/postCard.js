@@ -32,11 +32,15 @@ export function generateCard(post) {
                     <button type="button" class="btn btn-sm btn-outline-secondary view-btn">View</button>
                     <button type="button" class="btn btn-sm btn-outline-secondary edit-btn d-none">Edit</button>
                 </div>
-                <small class="text-body-secondary">${authorName}</small>
+                <small class="text-body-secondary">
+                    <a href="/account/viewProfile.html?u=${authorName}" class="text-body-secondary">
+                            ${authorName}
+                    </a>
+                </small>
             </div>
         </div>`
 
-            // Add event listeners for navigation
+      // Add event listeners for navigation
     card.querySelector('.view-btn').addEventListener('click', () => {
     window.location.href = `/post/post.html?id=${post.id}`;
     });

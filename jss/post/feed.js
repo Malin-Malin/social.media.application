@@ -8,47 +8,83 @@ const urlParams = new URLSearchParams(window.location.search);
 // Get the value of a specific parameter, e.g., "id"
 const profileName = urlParams.get("pn");
 
-//hva skal jeg gjøre
+let page = 1;
+const limit = 12;
+
+let mode = 'all'; // all, search or profile
 
 //data
 const searchInput = document.getElementById('search-input');
 const searchButton = document.getElementById('search-button');
 const postMatrix = document.getElementById('post-matrix');
+const loadMoreButton = document.getElementById('load-more-button');
+
+loadMoreButton.addEventListener('click', async () => {
+    page++;
+    let posts = [];
+    if (mode === 'profile') {
+        posts = await getPostsByUser(profileName, limit, true, page);
+    } else if (mode === 'search') { 
+        const query = searchInput.value.toLowerCase();
+        posts = await searchPosts(query, limit, true, page);
+    } else {
+        posts = await getAllPosts(limit, true, page);
+    }       
+    if (posts && posts.length > 0) {
+        generatePosts(posts);
+    } else {
+        loadMoreButton.disabled = true;
+        loadMoreButton.innerText = 'No more posts';
+    }
+});
 
 function generatePosts(posts) {
-    //clear  content
-    postMatrix.innerHTML = '';
     posts.forEach(post => {
         postMatrix.append(generateCard(post));
     });
 }
 
+function clearPosts() {
+    postMatrix.innerHTML = '';
+}
+
 searchButton.addEventListener('click', async (event) => {
     event.preventDefault();
+    clearPosts();
+    page = 1;
     const query = searchInput.value.toLowerCase();
     if (query) {
-        const posts = await searchPosts(query, 9, true);
+        mode = 'search';
+        const posts = await searchPosts(query, limit, true);
         if (posts && posts.length > 0) {
             generatePosts(posts);
         } else {
             postMatrix.innerHTML = '<p>No posts found.</p>';
         }
     } else {
+        mode = 'all';
         const posts = await getAllPosts(9, true);
         generatePosts(posts);
+
     }
 });
 
 async function main() {
-    let posts = []
     if (profileName) {
+        mode = 'profile';
+    } else {
+        mode = 'all';
+    }
+    let posts = []
+    if (mode === 'profile') {
         searchButton.classList.add('d-none');
         searchInput.classList.add('d-none');
         document.getElementById('page-header').innerText = `Posts by ${profileName}`;
-        posts = await getPostsByUser(profileName, 9, true);
+        posts = await getPostsByUser(profileName, limit, true, 1);
     } else {
-        posts = await getAllPosts(9, true); 
+        posts = await getAllPosts(limit, true,1); 
     }
+    clearPosts();
     generatePosts(posts);
 }
 

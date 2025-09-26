@@ -21,7 +21,7 @@ async function initEditMode() {
             return;
         }
 
-        
+
         const pageHeader = document.getElementById("page-header");
 
         const title = document.getElementById("title");
@@ -35,9 +35,9 @@ async function initEditMode() {
         tags.value = post.tags.join(", ");
         mediaUrl.value = post.media.url;
         mediaAlt.value = post.media.alt;
-        
+
         pageHeader.innerHTML = "Edit A Blog Post";
-        
+
         deleteButton.classList.remove("hidden");
         deleteButton.addEventListener("click", async (event) => {
             event.preventDefault();
@@ -46,7 +46,7 @@ async function initEditMode() {
                 // showModal("Deleting post...", "info", "Please wait", null, false);
                 result = await deletePost(postId);
                 // closeModal();
-            }catch (error) {
+            } catch (error) {
                 // closeModal();
                 // showModal(error.message, "error");
             }
@@ -57,7 +57,7 @@ async function initEditMode() {
         });
         // closeModal();
     } catch (error) {
-        if (error.message=='No post with such ID'){
+        if (error.message == 'No post with such ID') {
             window.location.href = '/404.html'
         };
         // closeModal();
@@ -67,29 +67,29 @@ async function initEditMode() {
 
 saveButton.addEventListener("click", async (event) => {
     event.preventDefault();
-    
+
     const formData = new FormData(postForm);
     const title = formData.get("title");
     const postBody = formData.get("body");
     const tags = formData.get("tags").split(",").map(tag => tag.trim());
     const mediaUrl = formData.get("media-url");
     const mediaAlt = formData.get("media-alt");
-    
+
     if (!title || !postBody || !mediaUrl) {
         // showModal("Please fill in all required fields", "error");
         console.log("Please fill in all required fields");
         return;
     }
-    
+
     let post;
     try {
         // showModal("Saving post...", "info", "Please wait", null, false);
-        if (postId) { 
-            post = await updatePost(postId,{title:title,body:postBody,tags:tags,media:{url:mediaUrl,alt:mediaAlt}});
+        if (postId) {
+            post = await updatePost(postId, { title: title, body: postBody, tags: tags, media: { url: mediaUrl, alt: mediaAlt } });
         } else {
-            post = await createPost(title,postBody,tags,{url:mediaUrl,alt:mediaAlt});
+            post = await createPost(title, postBody, tags, { url: mediaUrl, alt: mediaAlt });
         }
-    window.location.href = `/post/post.html?id=${post.id}`;
+        window.location.href = `/post/post.html?id=${post.id}`;
         // closeModal();
     } catch (error) {
         // closeModal();
@@ -100,7 +100,7 @@ saveButton.addEventListener("click", async (event) => {
 if (!isLoggedIn()) {
     // Redirect to login page if not logged in
     window.location.href = `${window.location.origin}/account/login.html`; //correct path?
-}else {
+} else {
     if (postId) {
         initEditMode();
     }

@@ -15,12 +15,12 @@ export async function getPostById(id,includeAuthor=false) {
 
 
 export async function getAllPosts(limit = 9, includeAuthor=false, page=1) {
-    const response = await get(`${postEndpoint}?limit=${limit}&_author=${includeAuthor}`);
+    const response = await get(`${postEndpoint}?limit=${limit}&page=${page}&_author=${includeAuthor}`);
     return response.data;
 };
 
-export async function getPostsByUser(userName, limit = 9, includeAuthor=false) {    
-    const response = await get(`${profilePostsEndpoint}/${userName}/posts?limit=${limit}&_author=${includeAuthor}`);   
+export async function getPostsByUser(userName, limit = 9, includeAuthor=false, page=1) {    
+    const response = await get(`${profilePostsEndpoint}/${userName}/posts?limit=${limit}&page=${page}&_author=${includeAuthor}`);   
     return response.data;
 }
 
@@ -50,7 +50,7 @@ export async function deletePost(id) {
     return true;
 }
 
-export async function searchPosts(query, limit = 9, includeAuthor=false) {
-    const response = await get(`${searchPostEndpoint}?q=${query}&limit=${limit}&_author=${includeAuthor}`);
+export async function searchPosts(query, limit = 9, includeAuthor=false, page=1) {
+    const response = await get(`${searchPostEndpoint}?q=${query}&limit=${limit}&page=${page}&_author=${includeAuthor}`);
     return response.data;
 }
