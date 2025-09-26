@@ -1,1 +1,0 @@
- // Pure functions like formatDate()

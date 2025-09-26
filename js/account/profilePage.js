@@ -1,21 +1,43 @@
 import { getMyFullProfile } from "../api/profileService.js";
+import { isLoggedIn } from "../api/authService.js";
 
 const postsBtn = document.getElementById('posts-btn');
+const followersMatrix = document.getElementById('followers-matrix');
 
 document.getElementById("edit-profile-btn").addEventListener("click", function() {
   window.location.href = "/account/editProfilePage.html";
 });
 
-// Example: Fetch user profile and update DOM
+async function displayFollowers(followers) {
+  followersMatrix.innerHTML = '';
+
+  followers.forEach(follower => {
+    const followerCard = document.createElement('div');
+    followerCard.className = 'col-12 col-md-4 py-4 text-center';
+    followerCard.innerHTML = `
+      <img alt="${follower.name}" class="rounded-circle mb-3" src="${follower.avatar?.url || 'https://i.pravatar.cc/400?img=11'}" 
+          width="96" height="96">
+      <h5><strong>${follower.name || '(no name)'}</strong></h5>
+      <p class="mt-2">${follower.bio || ''}</p>
+      <div style="margin-top:.5rem;">
+        <a href="/account/viewProfile.html?u=${encodeURIComponent(follower.name)}">View profile →</a>
+      </div>
+    `;
+
+    followersMatrix.appendChild(followerCard);
+  });
+}
+
 async function displayProfile() {
-  // Replace this with your actual fetch logic
-  const user = await getMyFullProfile(); // e.g., from API or localStorage
+  const user = await getMyFullProfile();
   document.getElementById('avatar').src = user.avatar?.url || '/image/avatar.jpg';
   document.getElementById('username').textContent = user.name || 'No Name';
   document.getElementById('bio').innerText = user.bio || 'No bio available';
   document.getElementById('followers-count').textContent = user._count.followers ? user._count.followers : '0';
   document.getElementById('following-count').textContent = user._count.following ? user._count.following : '0';
   document.getElementById('post-count').textContent = user._count.posts ? user._count.posts : '0';
+  
+  displayFollowers(user.followers);
 }
 
 postsBtn.addEventListener('click', async function() {
@@ -28,10 +50,14 @@ postsBtn.addEventListener('click', async function() {
 });
 
 async function main() {
-    try {
-        await displayProfile();    
-    } catch (error) {
-        window.location.href = '/404.html'
-    }
+  if (!isLoggedIn()) {
+    window.location.href = '/account/login.html';
+    return;
+  }
+  try {
+      await displayProfile();
+  } catch (error) {
+      window.location.href = '/404.html'
+  }
 } 
 main();

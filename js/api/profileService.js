@@ -1,6 +1,6 @@
 
 import {get, post, put, del} from './apiClient.js';
-import { getUserProfile } from './authService.js';
+import { getUserProfile, isLoggedIn } from './authService.js';
 import { save } from '../storage/storageService.js';
 
 const PROFILES_ENDPOINT = '/social/profiles'; //all profiles
@@ -27,9 +27,8 @@ export async function getAllProfiles({ page = 1, limit = 9 } = {}) {
 }
 
 export async function getMyFullProfile(){
+  if (!isLoggedIn()) return null;
   const user = await getUserProfile();
-  //THIS SHOULD WORK, JS is broken and weird
-  // console.log(user.name);
   const myProfile = await getProfile(user.name, true, true);
   if (myProfile) save('profile', JSON.stringify(myProfile));
   return myProfile;

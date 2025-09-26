@@ -11,20 +11,24 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="/">Home</a>
+                    <a class="nav-link" href="/">Home</a>
                     </li>
                     <li class="nav-item">
+                    <a class="nav-link" href="/post/feed.html">Blog feed</a>
+                    </li>
+                    <li id="login-link" class="nav-item">
                     <a class="nav-link" href="/account/login.html">Log in</a>
                     </li>
-                    <li class="nav-item dropdown">
+                    <li id="profile-dropdown" class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Dropdown
+                            Profile
                         </a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="/post/createPost.html">Write a new post</a></li>
-                            <li><a class="dropdown-item" href="/post/feed.html">Blog feed</a></li>
                             <li><hr class="dropdown-divider"></li>
                             <li><a class="dropdown-item" href="/account/profilePage.html">My Profile</a></li>
+                            <li><a class="dropdown-item" href="/account/editProfilePage.html">Edit Profile</a></li>
+                            <li><a id="sign-out" class="dropdown-item" href="#">Log out</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -40,3 +44,4 @@
         </nav>
     </section>
 </section>
+<script type="module" src="/js/components/header.js"></script>

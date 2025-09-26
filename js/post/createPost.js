@@ -4,23 +4,19 @@ import { isLoggedIn } from "../api/authService.js";
 import { getUserProfile } from "../api/authService.js";
 
 const saveButton = document.getElementById("save-button");
-const deleteButton = document.getElementById("delete-button"); //endre?
+const deleteButton = document.getElementById("delete-button");
 const urlParams = new URLSearchParams(window.location.search);
 const postId = urlParams.get("id");
 const postForm = document.getElementById("post-form");
 
 async function initEditMode() {
     try {
-        // showModal("Loading post...", "info", "Please wait", null, false);
         const post = await getPostById(postId, true);
 
         if (post.author.email !== getUserProfile().email) {
-            // closeModal();
-            // showModal("You are not authorized to edit this post", "error");
             window.location.href = `/`;
             return;
         }
-
 
         const pageHeader = document.getElementById("page-header");
 
@@ -43,25 +39,17 @@ async function initEditMode() {
             event.preventDefault();
             let result;
             try {
-                // showModal("Deleting post...", "info", "Please wait", null, false);
                 result = await deletePost(postId);
-                // closeModal();
             } catch (error) {
-                // closeModal();
-                // showModal(error.message, "error");
-            }
+                console.error("Error deleting post:", error);}
             if (result) {
-                // console.log("OK");
                 window.location.href = `/`;
             }
         });
-        // closeModal();
     } catch (error) {
         if (error.message == 'No post with such ID') {
             window.location.href = '/404.html'
         };
-        // closeModal();
-        // showModal(error.message, "error");
     }
 }
 
@@ -76,32 +64,32 @@ saveButton.addEventListener("click", async (event) => {
     const mediaAlt = formData.get("media-alt");
 
     if (!title || !postBody || !mediaUrl) {
-        // showModal("Please fill in all required fields", "error");
-        console.log("Please fill in all required fields");
+        console.error("Please fill in all required fields");
         return;
     }
 
     let post;
     try {
-        // showModal("Saving post...", "info", "Please wait", null, false);
         if (postId) {
             post = await updatePost(postId, { title: title, body: postBody, tags: tags, media: { url: mediaUrl, alt: mediaAlt } });
         } else {
             post = await createPost(title, postBody, tags, { url: mediaUrl, alt: mediaAlt });
         }
         window.location.href = `/post/post.html?id=${post.id}`;
-        // closeModal();
     } catch (error) {
-        // closeModal();
-        // showModal(error.message, "error");
+        console.error("Error saving post:", error);
     }
 });
 
-if (!isLoggedIn()) {
-    // Redirect to login page if not logged in
-    window.location.href = `${window.location.origin}/account/login.html`; //correct path?
-} else {
-    if (postId) {
-        initEditMode();
+async function main() {
+    if (!isLoggedIn()) {
+        // Redirect to login page if not logged in
+        window.location.href = `/account/login.html`;
+    } else {
+        if (postId) {
+            initEditMode();
+        }
     }
 }
+
+main(); 

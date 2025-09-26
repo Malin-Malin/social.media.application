@@ -1,4 +1,4 @@
-import { loginUser, registerUser } from '../api/authService.js';
+import { loginUser, registerUser, isLoggedIn } from '../api/authService.js';
 
 const form = document.querySelector('#auth-form');
 const title = document.querySelector('#form-title');
@@ -6,11 +6,6 @@ const button = document.querySelector('#submit-button');
 const toggle = document.querySelector('#toggle-mode');
 const message = document.querySelector('#status-message');
 const nameField = document.querySelector('#name-field')
-
-// exit modal- login form
-  document.getElementById('close-modal-btn').addEventListener('click', function() {
-  window.location.href = '/'; 
-});
 
 // default is login
 let isLoginMode = true; 
@@ -34,13 +29,9 @@ toggle.addEventListener('click', () => {
 
 // send in form
 form.addEventListener('submit', async (e) => {
-  e.preventDefault(); //keeps it from reloading the entire page
+  e.preventDefault(); // Prevent the default form submission
 
   const formData = new FormData(form);
-  /* Can I write this instead?
-  const formFiels = Object.fromEntries(formData); 
-  check that those are in use
-  */
   const name = formData.get("name");
   const email = formData.get("email");
   const password = formData.get("password");
@@ -62,3 +53,10 @@ form.addEventListener('submit', async (e) => {
 });
 
 //is registrer user working?
+
+function main() {
+  if (isLoggedIn()) {
+    window.location.href = `/`;
+  }
+}
+main();

@@ -1,6 +1,7 @@
 import { updateProfile, getMyFullProfile } from '../api/profileService.js';
+import { isLoggedIn } from '../api/authService.js'; 
 const profileForm = document.getElementById('profile-form');
-const profile = await getMyFullProfile(); // Assume this function fetches the current user's profile
+const profile = await getMyFullProfile();
 
 
 profileForm.addEventListener('submit', async function(event) {
@@ -31,7 +32,6 @@ document.getElementById('discard-btn').addEventListener('click', function() {
     window.location.href = '/account/profilePage.html'; // Redirect to profile view page
 });
 
-// Optionally, you can add code to fetch and display the current profile data in the form fields when the page loads.
 async function loadProfileData() {
     try {
         document.getElementById('avatar-url').value = profile.avatar?.url || '';
@@ -48,6 +48,10 @@ async function loadProfileData() {
 
 
 async function main() {
+    if (!isLoggedIn()) {
+        window.location.href = '/account/login.html';
+        return;
+    }
     loadProfileData();
 }
 

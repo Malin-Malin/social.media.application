@@ -1,6 +1,7 @@
 
 import { getAllPosts, searchPosts, getPostsByUser } from "../api/postsService.js"; 
-import { generateCard } from "../Components/postCard.js";
+import { generateCard } from "../components/postCard.js";
+import { isLoggedIn } from "../api/authService.js";
 
 // Get the query string from the current URL
 const urlParams = new URLSearchParams(window.location.search);
@@ -70,6 +71,11 @@ searchButton.addEventListener('click', async (event) => {
 });
 
 async function main() {
+    //TODO: is this only for logged in users? If so update nav bar too, if not why do i get 401 when not logged in?
+    if (!isLoggedIn()) {
+        window.location.href = '/account/login.html';
+        return;
+    }
     if (profileName) {
         mode = 'profile';
     } else {
