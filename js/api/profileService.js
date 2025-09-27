@@ -20,7 +20,7 @@ export async function getProfile(name, following = false, followers = false, pos
 
 //-----------------------------------------------all profiles----------------------------
 
-export async function getAllProfiles({ page = 1, limit = 9 } = {}) {
+export async function getAllProfiles(page = 1, limit = 9) {
   const profiles = await get(`${PROFILES_ENDPOINT}?limit=${limit}&page=${page}`); 
   return profiles;
 }
@@ -32,14 +32,6 @@ export async function getMyFullProfile(){
   if (myProfile) save('profile', JSON.stringify(myProfile));
   return myProfile;
 }
-
-//----------------------------------------------all posts by profile----------------------------
-// The response is the same as the posts endpoint, and accepts the same optional query parameters and flags
-
-export async function getAllPostsByProfile(name) {
-  const posts = await get(`${PROFILES_ENDPOINT}/${name}/posts`);  
-  return posts;
-} 
 
 //-----------------------------------------------update profile----------------------------
 export async function updateProfile(profileName, profileData) {
