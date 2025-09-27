@@ -9,8 +9,7 @@ export function generateCard(post) {
 
     const mediaUrl = post.media && post.media.url ? post.media.url : '/image/food_vibe02.jpg';
     const mediaAlt = post.media && post.media.alt ? post.media.alt : 'Generic fallback image';
-    const authorName = post.author?.name ?? post.owner ?? "Unknown";
-    const author = shortenStringLength(authorName, 10); 
+    const authorName = post.author?.name ?? "Unknown";
     
     const cardContainer = document.createElement('div');
     cardContainer.classList.add('col');

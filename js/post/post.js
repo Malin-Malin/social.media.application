@@ -12,8 +12,8 @@ const postContainer = document.getElementById('post-container');
 function displayPost(post) {
     const mediaUrl = post.media && post.media.url ? post.media.url : '/image/food_vibe02.jpg';
     const mediaAlt = post.media && post.media.alt ? post.media.alt : 'Generic fallback image';
-    const authorName = post.author?.name ?? post.owner ?? "Unknown";
-    const authorAvatar = post.author?.avatar?.url ? post.author.avatar.url : '/image/avatar.jpg'; // fallback image
+    const authorName = post.author?.name ?? "Unknown";
+    const authorAvatar = post.author?.avatar?.url ? post.author.avatar.url : '/image/avatar.jpg';
 
     postContainer.innerHTML = `
     <img class="col-md-6 order-md-2 ps-4 d-flex"
