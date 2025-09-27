@@ -1,4 +1,5 @@
 import { getPostById } from "../api/postsService.js";
+import { isLoggedIn } from "../api/authService.js";
 
 // Get the query string from the current URL
 const urlParams = new URLSearchParams(window.location.search);
