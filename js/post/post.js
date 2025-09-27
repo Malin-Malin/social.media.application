@@ -31,7 +31,6 @@ function displayPost(post) {
 }
 
 async function main() {
-    //TODO: is this only for logged in users? If so update nav bar too, if not why do i get 401 when not logged in?
     if (!isLoggedIn()) {
         window.location.href = '/account/login.html';
         return;

@@ -1,8 +1,14 @@
 import { getMyFullProfile } from "../api/profileService.js";
-import { isLoggedIn } from "../api/authService.js";
+import { isLoggedIn, logoutUser } from "../api/authService.js";
 
 const postsBtn = document.getElementById('posts-btn');
 const followersMatrix = document.getElementById('followers-matrix');
+const logoutBtn = document.getElementById('logout-btn');
+
+logoutBtn.addEventListener('click', function() {
+  logoutUser();
+  window.location.href = '/';
+});
 
 document.getElementById("edit-profile-btn").addEventListener("click", function() {
   window.location.href = "/account/editProfilePage.html";

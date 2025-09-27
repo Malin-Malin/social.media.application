@@ -6,8 +6,7 @@ export function generateCard(post) {
  
     const title = shortenStringLength(post.title, 15);
     const ingress = shortenStringLength(post.body, 30);
-    
-//TODO: set fallback image
+
     const mediaUrl = post.media && post.media.url ? post.media.url : '/image/food_vibe02.jpg';
     const mediaAlt = post.media && post.media.alt ? post.media.alt : 'Generic fallback image';
     const authorName = post.author?.name ?? post.owner ?? "Unknown";
@@ -19,7 +18,6 @@ export function generateCard(post) {
     const card = document.createElement('div');
     card.classList.add('card','shadow-sm');
 
-    // TODO: Fix buttonlinks
     card.innerHTML = `<img aria-label="${mediaAlt}"
             class="bd-placeholder-img card-img-top" height="225"
             preserveAspectRatio="xMidYMid slice" role="img" width="100%"
