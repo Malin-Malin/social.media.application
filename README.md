@@ -172,7 +172,7 @@ X-Noroff-API-Key: <yourApiKey>
 ## Deployment
 
 * Hosted on **Netlify**. Push to the main branch to trigger deploys.
-  Live URL: [https://sosial-media-application.netlify.app/][1]
+  ([Live URL][1])
 
 ---
 
@@ -190,4 +190,4 @@ Creator: Malin Skrettingland.
 [2]: https://www.netlify.com/?utm_source=chatgpt.com "Netlify: Push your ideas to the web"
 [3]: https://docs.noroff.dev/docs/v2/auth/api-key?utm_source=chatgpt.com "API Key - Noroff API"
 [4]: https://docs.noroff.dev/docs/v2/authentication?utm_source=chatgpt.com "Authentication - Noroff API"
-[5]: https://v2.api.noroff.dev/docs?utm_source=chatgpt.com "Swagger UI - noroff.dev"
+[5]: https://v2.api.noroff.dev/docs/static/index.html "Swagger UI - noroff.dev"
