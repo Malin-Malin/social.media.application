@@ -1,0 +1,27 @@
+{
+  "name": "social.media.application",
+  "version": "1.0.0",
+  "description": ">Assignment: This is an assignment from Noroff. It is focused around JavaScript.\r Building the front-end client for a social media application.",
+  "main": "index.js",
+  "scripts": {
+    "build": "sass styles/scss:styles/css --style=compressed",
+    "watch": "sass styles/scss:styles/css --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Malin-Malin/social.media.application.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Malin-Malin/social.media.application/issues"
+  },
+  "homepage": "https://github.com/Malin-Malin/social.media.application#readme",
+  "dependencies": {
+    "bootstrap": "^5.3.8"
+  },
+  "devDependencies": {
+    "sass": "^1.93.2"
+  }
+}

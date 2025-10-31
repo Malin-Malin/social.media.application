@@ -35,6 +35,10 @@ export function generateCard(post) {
                     </a>
                 </small>
             </div>
+            <button
+                class="btn btn-light position-absolute top-0 end-0 m-2 p-1 border-0">
+                <i class="bi bi-heart"></i>
+            </button>
         </div>`
 
       // Add event listeners for navigation
