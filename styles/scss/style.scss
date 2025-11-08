@@ -1,6 +1,7 @@
 @use "variables" as *;
 @use "../../node_modules/bootstrap/scss/bootstrap.scss" as * with ( 
     $primary: $primary,
+    $secondary: $secondary,
     $border-radius: $border-radius,
     $font-family-base: $font-family-base
 );
