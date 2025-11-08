@@ -1,9 +1,6 @@
 import { getPostById } from "../api/postsService.js";
 import { isLoggedIn } from "../api/authService.js";
 
-
-
-
 function displayPost(post) {
     const postContainer = document.getElementById('post-container');
 
