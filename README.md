@@ -23,15 +23,15 @@ A front-end social media application where users can browse a feed, view profile
 * [x] Bootstrap Icons integration
 * [ ] Single post page (reactions & comments)
 * [x] Show followers and following on profile pages
-* [/] Improve Bootstrap customization
+* [ ] Improve Bootstrap customization (Partially completed)
 * [x] Responsive design with Bootstrap grid system
 * [ ] Adjustment of sections (content fit)
-* [/] Apply a cohesive color theme throughout (in progress)
-* [/] Implement “like post” functionality (in progress)
+* [ ] Apply a cohesive color theme throughout (in progress)
+* [ ] Implement “like post” functionality (in progress, UI only)
 * [ ] Improve accessibility (ARIA, color contrast)
 * [ ] Work on the Index (Home) page layout and content
 * [ ] Loading indicators
-* [/] Display Followers/Following more clearly (in progress)
+* [ ] Display Followers/Following more clearly (in progress)
 * [ ] E2E Testing - Playwright or Cypress for user flow testing
 * [ ] Code Formatting - Prettier for consistent code style
 * [ ] Pre-commit Hooks - Husky + lint-staged for code quality gates
