@@ -1,6 +1,5 @@
->Assignment: This is an assignment from Noroff. It is focused around JavaScript.
+>Assignment: This is an assignment from Noroff. It is focused around JavaScript, Bootstrap and SASS.
 Building the front-end client for a social media application.
-
 
 # Social Media Application
 
@@ -8,51 +7,58 @@ A front-end social media application where users can browse a feed, view profile
 
 **Live site:** [https://sosial-media-application.netlify.app/][1]
 
-> **Status:** Work in progress. UI and content are being wired up to the Noroff v2 Social API.
-This project focuses mainly on JavaScript.
----
+> **Status:** Active Development - Bootstrap framework implemented, SCSS workflow established. Ongoing improvements to UI, responsiveness, and additional features.
+
 
 ## Features (current & planned)
 
 * [x] Basic layout & Bootstrap styling
+* [x] SCSS implementation with custom design variables
+* [x] User authentication (login / register)
 * [x] Profile details view (avatar, banner, bio, post count)
 * [x] Search for profiles
 * [x] Fallback images when media is missing
 * [x] Follow / Unfollow a profile (UI + API)
 * [x] Post feed with author info (`_author=true`)
+* [x] Bootstrap Icons integration
 * [ ] Single post page (reactions & comments)
-* [ ] Show followers and following on profile pages
-* [ ] Improve Bootstrap customization
+* [x] Show followers and following on profile pages
+* [ ] Improve Bootstrap customization (Partially completed)
+* [x] Responsive design with Bootstrap grid system
 * [ ] Adjustment of sections (content fit)
-* [ ] Apply a cohesive color theme throughout
-* [ ] Implement “like post” functionality
+* [ ] Apply a cohesive color theme throughout (in progress)
+* [ ] Implement “like post” functionality (in progress, UI only)
 * [ ] Improve accessibility (ARIA, color contrast)
-* [ ] Work on the Index (Home) page
+* [ ] Work on the Index (Home) page layout and content
 * [ ] Loading indicators
-* [ ] Display Followers/Following more clearly
+* [ ] Display Followers/Following more clearly (in progress)
+* [ ] E2E Testing - Playwright or Cypress for user flow testing
+* [ ] Code Formatting - Prettier for consistent code style
+* [ ] Pre-commit Hooks - Husky + lint-staged for code quality gates
+* [ ] ESLint - JavaScript linting and code standards
+* [ ] Error Boundary - Better error handling and user feedback
 
-
----
 
 ## Pages
 
-* **Home / Landing** – intro content and links to other areas (planned)
+* **Home / Landing** – intro content and links to other areas (in progress)
 * **Feed** – overview of recent posts from all users, single user and search
-* **Post** – single post page
-* **Profile** – details for user with followers and button to see all posts
+* **Post** – single post page (showing reactions and comments -in progress)
+* **Profile** – details for user with followers and button to see all posts. Here you can also edit your own profile.
 * **Create Post** – form to publish a new post
-* **Login** – Combined page for login and register.
+* **Login** – combined page for login and register. (Trying out SPA app behavior for learning purposes.)
+* **404** – not found page for invalid routes
 
----
 
 ## Tech Stack
 
 * **HTML, CSS, JavaScript (ES Modules)**
 * API by **Noroff** (v2) — authentication & key docs referenced above. ([Noroff API Dokumentasjon][4])
-* UI framework: **Bootstrap 5**. (utility classes + responsive grid)
+* **SCSS** — Custom design system with variables and source maps for customizable styling
+* **Bootstrap 5.3.8** — Responsive UI framework with utility classes and component library
+* **Bootstrap Icons** — Icon library for consistent iconography
 * Hosting: **Netlify**. ([Netlify][2])
 
----
 
 ## API & Authentication (Noroff v2)
 
@@ -66,21 +72,26 @@ X-Noroff-API-Key: <yourApiKey>
 * v2 **Authentication** overview: you need to log in to get an access token and create an API key and send both on each request. ([Noroff API Dokumentasjon][4])
 * v2 **Swagger** root if you want to explore endpoints interactively. ([Noroff API][5])
 
----
 
-## Getting Started (local)
+## Development Setup
+
+### Installation (local)
 
 1. **Clone** your repo and open the project folder.
 2. **Serve locally** (because ES Modules don’t work from `file://`):
-
    * VS Code: install **Live Server** → “Open with Live Server”; or
    * Node: `npx serve` (or any static server).
 3. **Open** the relevant page (e.g. `/post/feed.html`) and test.
 
----
+
+### SCSS Development
+
+* Edit `.scss` files in `/styles/scss/`
+* Compile to CSS (source maps included for debugging)
+* Custom variables defined in `variables.scss`
+
 
 ## Architecture (DRY & Reusable)
-
 
 **`storageService.js`** - simple localStorage wrapper.
 
@@ -154,7 +165,6 @@ X-Noroff-API-Key: <yourApiKey>
 
 *Result: less repetition, easier maintenance, and consistent UI across the app.*
 
----
 
 ## UI & Accessibility
 
@@ -167,14 +177,13 @@ X-Noroff-API-Key: <yourApiKey>
 
 * The project uses a reusable apiClient.js (centralized requests, headers, params, and error handling) and authService.js (single source of truth for auth state). 
 * Paired with small UI components (Header, Footer, Breadcrumb), this keeps the codebase DRY, consistent, and easy to maintain as the app grows.
----
+
 
 ## Deployment
 
-* Hosted on **Netlify**. Push to the main branch to trigger deploys.
+Hosted on **Netlify**. Push to the main branch to trigger deploys.
   ([Live URL][1])
 
----
 
 ## License
 
@@ -184,7 +193,6 @@ Creator: Malin Skrettingland.
   <img src="./image/Cartoon-style-portrait-01.5.png" alt="Cartoon-style portrait" width="400">
 </p>
 
----
 
 [1]: https://sosial-media-application.netlify.app/ "Home | Social Media App"
 [2]: https://www.netlify.com/?utm_source=chatgpt.com "Netlify: Push your ideas to the web"
